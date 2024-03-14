@@ -29,7 +29,7 @@ Implementación:
 
 ## Requisitos
 
-1. La aplicación debe tener una página de inicio que muestre una lista de libros. Los usuarios deben poder navegar por la lista de libros, buscar libros por título, autor o categoría.
+1. La aplicación debe tener una página de inicio que muestre una lista de libros. Los usuarios deben poder navegar por la lista de libros, buscar libros por título, autor o categoría. ✅
 
 2. Los usuarios deben poder ver los detalles de un libro, incluyendo su título, autor, categoría y resumen. ✅
 
@@ -45,7 +45,7 @@ Implementación:
 
 ## Requisitos adicionales (opcional)
 
-1. Los usuarios deben poder filtrar los libros por categoría.
+1. Los usuarios deben poder filtrar los libros por categoría. ✅
 2. Los usuarios deben poder ver sus propias reseñas y editarlas o eliminarlas. ✅
 3. Los usuarios deben poder ver su propio perfil con su nombre de usuario, correo electrónico y foto de perfil. ✅
 4. Los usuarios deben poder restablecer su contraseña si la olvidan.

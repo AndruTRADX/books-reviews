@@ -7,6 +7,10 @@ const UserProfile = async () => {
   const currentUser = await getCurrentUser();
   const user = await findUser(currentUser?.user?.email as string);
 
+  if (!user) {
+    return <article className="flex flex-col p-4 gap-4">No user</article>;
+  }
+
   return (
     <article className="flex flex-col p-4 gap-4">
       <h2 className="text-lg font-semibold text-gray-800 pb-16 pt-4">
