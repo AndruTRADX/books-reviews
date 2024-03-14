@@ -1,6 +1,7 @@
 "use client";
 
 import BookCard from "@/components/cards/BookCard";
+import { BookType } from "@/types";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import React, { useState } from "react";
 
@@ -54,7 +55,7 @@ const SearchBooks = () => {
             <p className="no-result">No books found :(</p>
           ) : (
             <>
-              {books.map((post) => (
+              {books.map((post: BookType) => (
                 <BookCard book={post} key={post._id} />
               ))}
             </>

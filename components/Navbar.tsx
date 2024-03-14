@@ -24,21 +24,6 @@ const Navbar = ({ session }: { session: Session | null }) => {
           <BookOpenIcon className="w-7 h-7 text-primary" />
         </Link>
 
-        <ul className="flex items-center gap-x-8 text-sm font-medium ">
-          <Link href="/" className="li-decoration-navbar hidden sm:block">
-            Home
-          </Link>
-          <Link href="/blogs" className="li-decoration-navbar hidden sm:block">
-            Blogs
-          </Link>
-          <Link
-            href="/courses"
-            className="li-decoration-navbar hidden sm:block"
-          >
-            Courses
-          </Link>
-        </ul>
-
         {session ? (
           <div className="flex items-center gap-2">
             <Button onClick={() => router.push("/profile")}>Perfil</Button>
