@@ -17,7 +17,7 @@ export async function findUser(email: string) {
       .exec();
 
     if (!user) {
-      throw new Error("Failed to find user");
+      console.log("Failed to get user");
     }
 
     return user;
