@@ -28,16 +28,39 @@ export async function getAllBooks(
   }
 }
 
+export async function searchBooks(query: string) {
+  try {
+    await connectToDB();
+
+    const books = await Book.find({
+      $or: [
+        { title: { $regex: query, $options: "i" } },
+        { author: { $regex: query, $options: "i" } },
+        { category: { $regex: query, $options: "i" } },
+      ],
+    }).exec();
+
+    if (!books) {
+      throw new Error("Failed to find books");
+    }
+
+    return books;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to search for books");
+  }
+}
+
 export async function getBook(id: string) {
   try {
     await connectToDB();
 
     const book = await Book.findById(id)
-      .populate({ 
+      .populate({
         path: "reviews",
-        options: { 
-          sort: { date: -1 } // Ordenar por date de forma descendente (más reciente a más antigua)
-        } 
+        options: {
+          sort: { date: -1 }, // Ordenar por date de forma descendente (más reciente a más antigua)
+        },
       })
       .exec();
 

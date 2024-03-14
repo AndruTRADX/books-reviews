@@ -1,7 +1,7 @@
 import { getBook } from "@/actions/book.actions";
 import { getCurrentUser } from "@/actions/getCurrentUser";
 import PostReview from "@/components/forms/PostReview";
-import { Button } from "@/components/ui/button";
+import { ReviewTypeOutside } from "@/models/review";
 
 const Hi = async ({ params }: { params: { bookID: string } }) => {
   const { bookID } = params;
@@ -28,10 +28,10 @@ const Hi = async ({ params }: { params: { bookID: string } }) => {
       {result.reviews.length === 0 ? (
         <p className="text-sm text-gray-600">No hay reseñas por ahora :(</p>
       ) : (
-        <ul className="list-disc flex flex-col gap-y-2">
-          {result.reviews.map((item) => (
+        <ul className="flex flex-col gap-y-2">
+          {result.reviews.map((item: ReviewTypeOutside) => (
             <li key={item.id} className="flex items-center text-sm gap-x-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+              <span className="w-2 h-2 rounded-full bg-primary" />
               <p className="text-gray-800">{item.text}:</p>
               <p className="text-primary">{item.score}/5</p>
             </li>

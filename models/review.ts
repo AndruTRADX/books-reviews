@@ -1,6 +1,14 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
 import User, { UserDocument } from "./user";
 
+export interface ReviewTypeOutside {
+  id: string;
+  score: number; // from 1 to 5
+  text: string; 
+  author: Types.ObjectId | UserDocument; // Reference ID
+  date: Date;
+}
+
 export interface ReviewType {
   score: number; // from 1 to 5
   text: string; 
