@@ -61,6 +61,7 @@ export async function getBook(id: string) {
         options: {
           sort: { date: -1 }, // Ordenar por date de forma descendente (más reciente a más antigua)
         },
+        model: Review
       })
       .exec();
 
@@ -70,8 +71,7 @@ export async function getBook(id: string) {
 
     return book;
   } catch (error) {
-    console.error(error);
-    throw new Error("Failed to find book");
+    return { statusCode: 500, message: "Invalid connection string" };
   }
 }
 

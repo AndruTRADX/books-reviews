@@ -22,7 +22,6 @@ export async function findUser(email: string) {
 
     return user;
   } catch (error) {
-    console.log(error);
-    throw new Error("Failed to get user");
+    return { statusCode: 500, message: "Invalid connection string" };
   }
 }

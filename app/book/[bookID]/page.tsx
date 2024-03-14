@@ -25,11 +25,11 @@ const Hi = async ({ params }: { params: { bookID: string } }) => {
       <p className=" text-gray-600">{result.summary}</p>
 
       <h2 className="text-sm text-primary font-semibold">Reseñas:</h2>
-      {result.reviews.length === 0 ? (
+      {result?.reviews?.length === 0 ? (
         <p className="text-sm text-gray-600">No hay reseñas por ahora :(</p>
       ) : (
         <ul className="flex flex-col gap-y-2">
-          {result.reviews.map((item: ReviewTypeOutside) => (
+          {result?.reviews?.map((item: ReviewTypeOutside) => (
             <li key={item.id} className="flex items-center text-sm gap-x-2">
               <span className="w-2 h-2 rounded-full bg-primary" />
               <p className="text-gray-800">{item.text}:</p>
