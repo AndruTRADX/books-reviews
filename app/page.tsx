@@ -1,6 +1,5 @@
 import { getAllBooks } from "@/actions/book.actions";
 import BookCard from "@/components/cards/BookCard";
-import { books } from "@/constants/temporal";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 export default async function Home({
@@ -10,7 +9,7 @@ export default async function Home({
 }) {
   const result = await getAllBooks(
     searchParams.page ? +searchParams.page : 1,
-    30
+    12
   );
 
   return (

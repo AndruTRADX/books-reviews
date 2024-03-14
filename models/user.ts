@@ -1,5 +1,5 @@
 import mongoose, { Schema, Document, Types } from "mongoose";
-import Review, { ReviewDocument } from "./review";
+import { ReviewDocument } from "./review";
 
 export interface UserDocument extends Document {
   name: string;
@@ -11,7 +11,7 @@ export interface UserDocument extends Document {
   reviews: Types.DocumentArray<ReviewDocument>;
 }
 
-const userSchema = new Schema<UserDocument>({
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "please write your name"],
@@ -43,5 +43,5 @@ const userSchema = new Schema<UserDocument>({
   }],
 });
 
-const User = mongoose.models.User || mongoose.model<UserDocument>("User", userSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 export default User;

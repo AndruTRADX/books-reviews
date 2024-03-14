@@ -8,7 +8,7 @@ export interface ReviewType {
   date: Date;
 }
 
-const reviewSchema = new Schema<ReviewDocument>({
+const reviewSchema = new mongoose.Schema({
   score: {
     type: Number,
     min: 1,
@@ -26,11 +26,11 @@ const reviewSchema = new Schema<ReviewDocument>({
   },
   date: {
     type: Date,
-    default: Date.now(),
+    default: Date.now,
   },
 });
 
 export interface ReviewDocument extends ReviewType, Document {}
 
-const Review = mongoose.models.Review || mongoose.model<ReviewDocument>("Review", reviewSchema);
+const Review = mongoose.models.Review || mongoose.model('Review', reviewSchema)
 export default Review;

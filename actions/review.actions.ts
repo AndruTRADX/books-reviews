@@ -6,12 +6,10 @@ import Book from "@/models/book";
 
 export async function createReview({
   score,
-  author,
   text,
   bookID,
 }: {
-  score: string;
-  author: string;
+  score: number;
   text: string;
   bookID: string;
 }): Promise<ReviewType | null> {
@@ -30,7 +28,7 @@ export async function createReview({
       throw new Error("User not found");
     }
 
-    const createdReview = await Review.create({ score: parseInt(score), author: user._id, text });
+    const createdReview = await Review.create({ score: score, author: user._id, text });
 
     await User.findByIdAndUpdate(user._id, {
       $push: { reviews: createdReview._id },

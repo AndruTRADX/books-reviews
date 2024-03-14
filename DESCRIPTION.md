@@ -30,12 +30,18 @@ Implementación:
 ## Requisitos:
 
 1. La aplicación debe tener una página de inicio que muestre una lista de libros. Los usuarios deben poder navegar por la lista de libros, buscar libros por título, autor o categoría.
-2. Los usuarios deben poder ver los detalles de un libro, incluyendo su título, autor, categoría y resumen.
-3. Los usuarios deben poder dejar reseñas para un libro, incluyendo una calificación del 1 al 5 y un comentario en texto.
-4. Los usuarios deben poder ver las reseñas dejadas por otros usuarios, ordenadas por las más recientes.
-5. La aplicación debe tener autenticación y autorización de usuarios. Los usuarios deben poder registrarse para obtener una cuenta, iniciar sesión con sus credenciales y cerrar sesión. Solo los usuarios autenticados deben poder dejar reseñas para un libro.
-6. La aplicación debe ser receptiva y accesible.
-7. La aplicación debe ser implementada en una plataforma de alojamiento y tener un pipeline de CI/CD configurado.
+
+2. Los usuarios deben poder ver los detalles de un libro, incluyendo su título, autor, categoría y resumen. ✅
+
+3. Los usuarios deben poder dejar reseñas para un libro, incluyendo una calificación del 1 al 5 y un comentario en texto. ✅
+
+4. Los usuarios deben poder ver las reseñas dejadas por otros usuarios, ordenadas por las más recientes. ✅
+
+5. La aplicación debe tener autenticación y autorización de usuarios. Los usuarios deben poder registrarse para obtener una cuenta, iniciar sesión con sus credenciales y cerrar sesión. Solo los usuarios autenticados deben poder dejar reseñas para un libro. ✅
+
+6. La aplicación debe ser receptiva y accesible. ✅
+
+7. La aplicación debe ser implementada en una plataforma de alojamiento y tener un pipeline de CI/CD configurado. ✅
 
 ## Requisitos adicionales (opcional):
 

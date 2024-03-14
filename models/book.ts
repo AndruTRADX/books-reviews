@@ -9,7 +9,7 @@ export interface BookType {
   summary: string;
 }
 
-const bookSchema = new Schema<BookDocument>({
+const bookSchema = new mongoose.Schema({
   title: {
     type: String,
     required: [true, "Please provide a title for the book"],
@@ -36,5 +36,5 @@ export interface BookDocument extends BookType, Document {
   reviews: Types.DocumentArray<ReviewDocument>;
 }
 
-const Book = mongoose.models.Book || mongoose.model<BookDocument>("Book", bookSchema);
+const Book = mongoose.models.Book || mongoose.model('Book', bookSchema)
 export default Book;

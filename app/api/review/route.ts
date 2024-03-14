@@ -1,10 +1,10 @@
-import { createBook } from "@/actions/book.actions";
+import { createReview } from "@/actions/review.actions";
 import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const res = await createBook(body);
+    await createReview(body);
 
     return new NextResponse("Made correctly");
   } catch (error) {

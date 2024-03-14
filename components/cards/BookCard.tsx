@@ -19,10 +19,6 @@ const BookCard = ({ book }: Props) => {
         <span className="text-primary group-hover:text-primary/90 text-sm font-medium">
           {book.author}
         </span>
-        <span className="w-1 h-1 bg-primary group-hover:bg-primary/90 rounded-full" />
-        <span className="text-primary group-hover:text-primary/90 text-sm font-medium">
-          {book.date.toString().replaceAll("-", "/")}
-        </span>
       </p>
       <p className="text-gray-600 text-sm">{book.summary}</p>
       <p className="span-badge">{book.category}</p>
